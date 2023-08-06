@@ -15,7 +15,7 @@ import { AppLoggerModule } from './logger/logger.module';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
-        type: 'postgres',
+        type: 'mysql',
         host: configService.get<string>('database.host'),
         port: configService.get<number | undefined>('database.port'),
         database: configService.get<string>('database.name'),
