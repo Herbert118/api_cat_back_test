@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
+import { Project } from '../..//project/entities/project.entity';
 import { Article } from '../../article/entities/article.entity';
 
 @Entity('users')
@@ -43,4 +44,7 @@ export class User {
 
   @OneToMany(() => Article, (article) => article.author)
   articles: Article[];
+
+  @OneToMany(() => Project, (project) => project.owner)
+  projects: Project[];
 }
