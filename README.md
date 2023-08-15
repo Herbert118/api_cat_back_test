@@ -1,3 +1,20 @@
+## apiCat后端模板
+
+### 配置过程
+* 安装mysql 3306 建数据库apiCatTest1
+  * 可能遇到密码策略问题，见https://blog.csdn.net/kkkloveyou/article/details/91623834
+* `npm install`
+  * 可能有包相关问题导致失败，可以百度下，或群里问下
+  * 包里有一些有点老了，可以看下到时候要不要升级
+* 新建.env文件，把.env.template的内容复制过去
+  * 可能得改下密码
+* `npm run migration:run` 建立表（如果表已存在可以先drop）
+  * 适配了windows的命令，其他系统可看下原版改下package.json
+* `npm start` 访问`localhost:3000/swagger`,swagger 怎么用可以查一下
+* 先`/auth/register`后再`/auth/login`，然后把得到accessToken放在页面右上角的Authorization里
+
+
+以下是原脚手架说明
 ## NestJS Starter Kit [v2]
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
